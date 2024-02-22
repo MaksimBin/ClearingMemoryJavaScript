@@ -15,6 +15,8 @@ const loadStyle = () => {
 
 loadStyle()
 
+const startDocuments = () => {
+
 document.querySelector('.box-left').style = height: ${boxLeft}vh;
 
 document.querySelector('.box-right').style = height: ${boxRigth}vh;
@@ -25,6 +27,10 @@ document.querySelector('.app').innerHTML = ${numberMemory}
 document.querySelector('.memoryText').innerHTML = <div>Оперативная память</div> <div>${memora} <sup>mb</sup></div>
 
 document.querySelector('.kech').innerHTML = <div>Кеш</div><div>${kech} <sup>mb</sup></div>
+
+}
+
+startDocuments()
 
 
 const memory = () => {
