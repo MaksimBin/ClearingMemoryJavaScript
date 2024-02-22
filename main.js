@@ -1,20 +1,30 @@
-let memora = 600
-let kech = 300
+let memora = 400
+let kech = 700
 let numberMemory = memora + kech
 
 let boxLeft = 40
 let boxRigth = 70
 
-document.querySelector('.box-left').style = `height: ${boxLeft}vh;`
+const loadStyle = () => {
+  if (numberMemory == 0) {
+    document.querySelector('.load').style = "box-shadow: 0px 0px 7px 3px chartreuse;"
+  } else {
+    document.querySelector('.load').style = "box-shadow: 0px 0px 7px 3px red;"
+  }
+}
 
-document.querySelector('.box-right').style = `height: ${boxRigth}vh;`
+loadStyle()
+
+document.querySelector('.box-left').style = height: ${boxLeft}vh;
+
+document.querySelector('.box-right').style = height: ${boxRigth}vh;
 
 
-document.querySelector('.app').innerHTML = `${numberMemory}`
+document.querySelector('.app').innerHTML = ${numberMemory}
 
-document.querySelector('.memoryText').innerHTML = `<div>Оперативная память</div> <div>${memora} <sup>mb</sup></div>`
+document.querySelector('.memoryText').innerHTML = <div>Оперативная память</div> <div>${memora} <sup>mb</sup></div>
 
-document.querySelector('.kech').innerHTML = `<div>Кеш</div><div>${kech} <sup>mb</sup></div>`
+document.querySelector('.kech').innerHTML = <div>Кеш</div><div>${kech} <sup>mb</sup></div>
 
 
 const memory = () => {
@@ -22,18 +32,21 @@ const memory = () => {
   setInterval(() => {
     if (numberMemory == 0) return
 
-    document.querySelector('.app').innerHTML = `${numberMemory = numberMemory - 10}`
+    document.querySelector('.app').innerHTML = ${numberMemory = numberMemory - 10}
 
-    document.querySelector('.memoryText').innerHTML = `<div>Оперативная память</div><div>${getKech()} <sup>mb</sup></div>`
+    document.querySelector('.memoryText').innerHTML = <div>Оперативная память</div><div>${getKech()} <sup>mb</sup></div>
 
-    document.querySelector('.kech').innerHTML = `<div>Кеш</div><div>${getMemora()} <sup>mb</sup></div>`
+    document.querySelector('.kech').innerHTML = <div>Кеш</div><div>${getMemora()} <sup>mb</sup></div>
 
-    document.querySelector('.box-left').style = `height: ${getBoxLeft()}vh;  background-color: ${getColorLeft()};`
+    document.querySelector('.box-left').style = height: ${getBoxLeft()}vh;  background-color: ${getColorLeft()};
 
-    document.querySelector('.box-right').style = `height: ${getBoxRigth()}vh;background-color: ${getColorRigth()};`
+    document.querySelector('.box-right').style = height: ${getBoxRigth()}vh;background-color: ${getColorRigth()};
 
+loadStyle()
 
   }, 20)
+  
+  
 
 }
 
